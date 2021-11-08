@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>01 Go Intro</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>01. GO - Introduction</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>introduction</h2>
+					</section>
+					<section>
+						<i>"Go is an open source programming language that makes it easy to build simple, reliable, and efficient software." (golang.org)</i>
+					</section>
+					<section>
+						<img src="./img/go_origin.png" style="width:600px">
+						<h3>Origin</h3>
+					</section>
+					<section>
+						<ul>
+							<li>Origin</li>
+							<ul>
+								<li>C - syntax, pointers, compilation</li>
+								<li>Pascal,... - packages, imports, declarations</li>
+								<li>CSP,... - concurrency, channels</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>The Go Project</li>
+							<ul>
+								<li>language itself</li>
+								<li>tools and standard libraries</li>
+								<li>cultural agenda of radical simplicity</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<i>"complexity is multiplicative" (Rob Pike)</i>
+					</section>
+					<section>
+						<h3>So... what is it? (and isn't)</h3>
+					</section>
+					<section>
+						<ul>
+						<li>Object-oriented, not type-oriented</li>
+							<ul>
+								<li>no inheritance, type hierarchy</li>
+								<li>methods on any type, but not classes or subclasses</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Implicit (mostly), not explicit</li>
+							<ul>
+								<li>types are often inferred, not declared</li>
+								<li>interfaces derived, not specified</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Concurrent, not parallel</li>
+							<ul>
+								<li>intended for program structure (simplicity), not maximum performance</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Basics</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Types</li>
+							<ul>
+								<li>Basic / primitive</li>
+								<ul>
+									<li>int int8 int16 int32 int64</li>
+									<li>uint uint8 uint16 uint32 uint64</li>
+									<li>float32 float64 complex64 complex128</li>
+									<li>bool byte rune string error</li>
+								</ul>
+								<li>Aggregate - array, struct</li>
+								<li>Reference - pointer, slice, map, function, channel</li>
+								<li>Interface</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<ul>
+							<li>Declarations</li>
+							<ul>
+								<li>var</li>
+								<li>const</li>
+								<li>type</li>
+								<li>func</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<img src="./img/go_for.png" style="width:600px">
+						<h3>For loop</h3>
+					</section>
+
+					<section>
+						<h3>Hello World</h3>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Concurrency</h2>
+					</section>
+
+					<section>
+						<h2>Concurrency x parallelism</h2>
+					</section>
+
+					<section>
+						<ul>
+							<li>Parallelism conditions</li>
+							<ul>
+								<li>multi-core processors</li>
+								<li>programs are unrelated</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<i>Concurrency means multiple computations are happening at the same time.</i>
+					</section>
+
+					<section>
+						<ul>
+							<li>Two Models for Concurrent Programming</li>
+							<ul>
+								<li>shared memory</li>
+								<li>message passing</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<img src="./img/shared-memory.png" style="width:600px">
+						<h3>shared memory</h3>
+					</section>
+
+					<section>
+						<img src="./img/message-passing.png" style="width:600px">
+						<h3>message passing</h3>
+					</section>
+
+					<section>
+						<h2>Interleaving</h2>
+					</section>
+
+					<section>
+						<h2>Race condition</h2>
+					</section>
+
+					<section>
+						<ul>
+							<li>Goroutines</li>
+							<ul>
+								<li>concurrently executing activity</li>
+								<li>main goroutine</li>
+								<li>new created by the go statement</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<img src="./img/go_goroutine.png" style="width:150px">
+						<h4>goroutines</h4>
+					</section>
+
+					<section>
+						<ul>
+							<li>Channels</li>
+							<ul>
+								<li>connections between goroutines</li>
+								<li>lets one goroutine send values to another goroutine</li>
+								<li>element type</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<img src="./img/go_channel.png" style="width:400px">
+						<h4>channels</h4>
+					</section>
+				</section>
+
+				<section>
+					<h2>Workshop</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>Future topics</h2>
+					</section>
+
+					<section>
+						<ul>
+							<li>Future topics</li>
+							<ul>
+								<li>Creating REST API</li>
+								<li>More into concurrency</li>
+								<li>Profiling</li>
+								<li>Performance</li>
+								<li>Low-level programming</li>
+								<li>...</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Thanks</h2>
+					</section>
+
+					<section>
+						<h2>Feedback pls...</h2>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
