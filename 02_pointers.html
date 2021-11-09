@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>02 Pointers</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Pointers</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>Terminology</h2>
+					</section>
+					<section>
+						<h2>Memory</h2>
+						<ul>
+							<li>stack</li>
+							<ul>
+								<li>faster</li>
+								<li>local variables</li>
+								<li><b>self-cleaning</b></li>
+								<li>limited size</li>
+							</ul>
+							<li>heap</li>
+							<ul>
+								<li>slower</li>
+								<li>global variables</li>
+								<li>allocated = <b>garbage collected</b></li>
+								<li>unlimited size</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Goroutine</h2>
+						<ul>
+							<li>lightweight application thread</li>
+							<li>execution of distinct set of instructions</li>
+							<li>at least 1 goroutine always running</li>
+							<li>dynamic stack, min 2kB</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Pointer</h2>
+						<ul>
+							<li>address</li>
+							<li>sharing values across program boundaries</li>
+							<ul>
+								<li>between function calls</li>
+								<li>between goroutines</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Pass By Value</h2>
+						<ul>
+							<li>value itself (int, string,..)</li>
+							<li>address</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Escape Analysis</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Demo</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>When programming, always bear in mind where the values will be stored</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Next: Garbage Collector and Tracing</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Thank you</h2>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
