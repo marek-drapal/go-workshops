@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>03 GC & Tracing</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Garbage Collector & Tracing</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>Terminology</h2>
+					</section>
+					<section>
+						<h2>Garbage Collector</h2>
+						<ul>
+							<li>automatic memory management</li>
+							<li>reclaims <b>allocated</b> memory</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tracing</h2>
+						<ul>
+							<li>logging about a program's execution</li>
+							<li>noisy</li>
+							<li>low level</li>
+							<li>optimalization</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Garbage Collector & Go</h2>
+					</section>
+					<section>
+						<ul>
+							<li>non-generational</li>
+							<li>non-compacting</li>
+							<li>concurrent</li>
+							<li>tri-color</li>
+						</ul>
+					</section>
+					<section>
+						<p>defaultly stars at 4MB heap allocation</p>
+					</section>
+					<section>
+						<ul>
+							<li>3 phases</li>
+							<ul>
+								<li>Marking Setup - STW</li>
+								<li>Marking - concurrent</li>
+								<li>Mark Termination - STW</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Marking Setup</li>
+							<ul>
+								<li>STW</li>
+								<li>turn on Write Barrier</li>
+								<ul>
+									<li>data integrity</li>
+									<li>happened before / after</li>
+								</ul>
+								<li>10 to 30 μs</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Marking</li>
+							<ul>
+								<li>concurrent</li>
+								<li>25% CPU capacity</li>
+								<ul>
+									<li>in prod env at least 4 cores</li>
+								</ul>
+								<li>scan all stacks</li>
+								<ul>
+									<li>pointers pointing to heap</li>
+								</ul>
+								<li>tri-color marking</li>
+								<ul>
+									<li>gray - not processed yet</li>
+									<li>white - remove</li>
+									<li>black - is used</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Mark Termination</li>
+							<ul>
+								<li>STW</li>
+								<li>white marked resources</li>
+								<li>CPU back to application</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<p>Reducing time GC needs to be running means more CPUs can be used by application goroutines</p>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Tracing Demo</h2>
+					</section>
+					<section>
+						<h2>Results</h2>
+						<img src="./img/03_demo_results.png">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Optimize when there is a need. Never optimize preemptively</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Next: Go Deadlocks</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Thank you</h2>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
