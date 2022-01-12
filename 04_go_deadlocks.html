@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>04 Go Deadlocks</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Go Deadlocks</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>What is a deadlock?</h2>
+					</section>
+
+					<section>
+						<h2>Definition</h2>
+						<p>A deadlock is a state in which each member of a group waits for another member, including itself, to take action, such as sending a message or more commonly releasing a lock. (Wikipedia)</p>
+					</section>
+
+					<section>
+						<h2>Visualization</h2>
+						<img src="./img/04_deadlock.png" style="width:600px">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Simple example</h2>
+					</section>
+
+					<section>
+						<h2>Deadlock Detector</h2>
+						<p>Triggers only if all goroutines are deadlocked</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Why do deadlocks happen?</h2>
+					</section>
+
+					<section>
+						<ul>
+							<li>Concurrency</li>
+							<li>Locking</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Data Races</h2>
+					</section>
+
+					<section>
+						<h2>Race Detector</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Channels example</h2>
+					</section>
+				</section>
+
+				<section>
+					<h2>Debug Tools</h2>
+					<ul>
+						<li>https://github.com/google/pprof</li>
+						<li>https://github.com/maruel/panicparse</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Good Practices</h2>
+					</section>
+
+					<section>
+						<h2>Don't send and receive to the same channle in the same goroutine</h2>
+					</section>
+
+					<section>
+						<h2>Don't take a read lock twice in the same goroutine</h2>
+					</section>
+
+					<section>
+						<h2>Release locks as soons as possible</h2>
+					</section>
+
+					<section>
+						<h2>Access read only variables outside the lock</h2>
+					</section>
+
+					<section>
+						<h2>Other mitigations</h2>
+						<ul>
+							<li>Split the lock</li>
+							<li>Atomics</li>
+							<li>RWMutex instead of Mutex</li>
+							<li>Use buffered channels</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Total Lock Ordering</h2>
+					</section>
+
+					<section>
+						<h2>Comments</h2>
+					</section>
+
+					<section>
+						<h2>Static analysis tools</h2>
+						<ul>
+							<li>Dingo Hunter - unbuffered channels</li>
+							<li>Go Deadlock - mutex</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>References</h2>
+					<ul>
+						<li>Nick Craig-Wood</li>
+						<ul>
+							<li>Deadlocks: The Dark Side of Concurrency</li>
+							<li>https://www.youtube.com/watch?v=9j0oQkqzhAE</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Thank you</h2>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
