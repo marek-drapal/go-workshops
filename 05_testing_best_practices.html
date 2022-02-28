@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>05 Testing BP</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Go Testing Best Practices</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>Tests Location</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Table Driven Tests</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Mocking</h2>
+					</section>
+
+					<section>
+						<h2>Higher Level Function</h2>
+					</section>
+
+					<section>
+						<h2>Interface Substitution</h2>
+					</section>
+
+					<section>
+						<h2>Third-Party Packages</h2>
+						<ul>
+							<li>gomock https://github.com/golang/mock</li>
+							<li>testify https://github.com/stretchr/testify</li>
+							<li>mockery https://github.com/mockery/mockery</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Benchmarking</h2>
+					</section>
+				</section>
+
+				<section>
+					<h2>References</h2>
+					<ul>
+						<li>https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742</li>
+						<li>https://medium.com/@matryer/idiomatic-go-tricks-62abea5c50fb#.heq4l4gsp</li>
+						<li>https://www.myhatchpad.com/insight/mocking-techniques-for-go/</li>
+						<li>https://gobyexample.com/testing</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Thank you</h2>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
