@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>06 Testing Libraries</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Go Testing Libraries</h1>
+                    <p>With focus on mocking</p>
+				</section>
+
+                <section>
+                    <h2>Motivation</h2>
+                    <ul>
+                        <li>Stubbing complex stuff</li>
+                        <li>Tools for integration and other types of testing</li>
+                        <li>QoL tools for Go testing</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Mock without any lib</h2>
+                </section>
+
+				<section>
+					<section>
+						<h2><a href="https://github.com/golang/mock">golang/mock</a></h2>
+					</section>
+                    <section>
+                        <h2>Gomock and mockgen packages</h2>
+                    </section>
+				</section>
+
+				<section>
+					<section>
+						<h2><a href="https://github.com/stretchr/testify">stretchr/testify</a></h2>
+					</section>
+                    <section>
+                        <h2>Assert and require package</h2>
+                    </section>
+                    <section>
+                        <h2>Suite package</h2>
+                    </section>
+                    <section>
+                        <h2>Mock package</h2>
+                    </section>
+				</section>
+
+				<section>
+					<section>
+                        <h2><a href="https://github.com/vektra/mockery">vektra/mockery</a></h2>
+					</section>
+
+                    <section>
+                        <h2>Generator of testify mocks</h2>
+                    </section>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>Conclusion</h2>
+                        <ul>
+                            <li>Testing/mocking "FWs" can be overkill for some simple use cases</li>
+                            <li>It add another layer of abstraction and "magic" to tests</li>
+                            <li>But it tools can make more complex tests easier/faster to read (and write)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Personal experience</h2>
+                        <ul>
+                            <li>Gomock and genmock was quite finicky to get working for me</li>
+                            <li>Mockery with Testify worked out of the box on the first try, and it has more assert and mock options</li>
+                            <li>From my limited experience: Testify all the way 😂</li>
+                        </ul>
+                    </section>
+                </section>
+
+				<section>
+					<section>
+						<h2>Thank you</h2>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
