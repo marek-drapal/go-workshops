@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Go Betsys</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Building Go Community</h1>
+				</section>
+
+                <section>
+                    <h2>Marek Drápal</h2>
+					<ul>
+						<li>Go Guild Master at Betsys</li>
+						<li>Go Developer for 3 years</li>
+						<li>https://www.linkedin.com/in/marek-drapal</li>
+					</ul>
+                </section>
+
+				<section>
+                    <section>
+						<h2>Starting with Go</h2>
+					</section>
+
+					<section>
+						<h2>Moving data from write to read layer</h2>
+					</section>
+
+					<section>
+						<h2>Why Go?</h2>
+						<ul>
+							<li>Streams</li>
+							<li>Concurrency</li>
+							<li>Open Source - WAL</li>
+							<li>Ideas of Hashing app</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Replication Handler</h2>
+					</section>
+
+					<section>
+						<h2>Fuck Ups / Struggles</h2>
+					</section>
+
+					<section>
+						<h2>Memory Leak</h2>
+						<p>Defer in an infinite for loop</p>
+						<img src="./img/07/01_mem_leak.png">
+					</section>
+
+					<section>
+						<h2>State of Goroutines</h2>
+					</section>
+
+					<section>
+						<ul>
+							<li>Metrics</li>
+							<li>Status Endpoint</li>
+						</ul>
+						<img src="./img/07/02_status.png">
+					</section>
+
+					<section>
+						<h2>Beware of Sleeps</h2>
+					</section>
+                </section>
+
+				<section>
+                    <section>
+						<h2>Role of Go</h2>
+						<p>dobre na streamovani spousty dat mezi sluzbami, API, rozhrani</p>
+					</section>
+
+					<section>
+						<h2>High Performance</h2>
+					</section>
+
+					<section>
+						<h2>Concurrent Processing</h2>
+					</section>
+
+					<section>
+						<h2>CPU Heavy Operations - Calculations</h2>
+					</section>
+
+					<section>
+						<h2>Streaming</h2>
+					</section>
+
+					<section>
+						<h2>(Infrastructure - Low Code)</h2>
+					</section>
+                </section>
+
+				<section>
+                    <section>
+						<h2>Go Guild</h2>
+					</section>
+
+					<section>
+						<h2>Internal</h2>
+						<p>Link people with interest in Go across teams to share knowledge, best practices and drive Go on company level</p>
+					</section>
+
+					<section>
+						<h2>GopherCon UK 2021</h2>
+					</section>
+
+					<section>
+						<h2>Going Public</h2>
+					</section>
+
+					<section>
+						<h2>Creating Content</h2>
+						<p>https://www.youtube.com/channel/UC7QVik_KXwUlYTgaP2BM1dg</p>
+						<img src="./img/07/03_yt.png">
+					</section>
+	
+					<section>
+						<h2>Coming Soons</h2>
+						<ul>
+							<li>Go Generics</li>
+							<li>Kubernetes</li>
+							<li>Concurrency Patterns</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Next Steps</h2>
+						<ul>
+							<li>More Content</li>
+							<li>Social Media</li>
+							<li>Communication Channels</li>
+							<li>Receive Feedback -> Improve</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2></h2>
+						<img src="./img/07/04_vader_join.webp">
+					</section>
+                </section>
+
+				<section>
+                    <h2>Questions</h2>
+                </section>
+
+				<section>
+                    <h2>Thank You!</h2>
+                </section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
